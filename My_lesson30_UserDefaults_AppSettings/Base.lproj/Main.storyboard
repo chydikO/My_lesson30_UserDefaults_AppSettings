@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWI-Gs-R7C">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="My_lesson30_UserDefaults_AppSettings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAi-oh-IUr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QOR-3p-1v3">
+                                        <rect key="frame" x="20" y="20" width="374" height="374"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28y-GV-mo2">
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="31"/>
+                                                <connections>
+                                                    <action selector="switchControlChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="8kJ-ZA-1fR"/>
+                                                </connections>
+                                            </switch>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nky-Qy-d1h">
+                                                <rect key="frame" x="0.0" y="51" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textFieldChanged" destination="BYZ-38-t0r" eventType="editingChanged" id="rnR-gJ-hMe"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oeS-oT-qHf"/>
+                                                </connections>
+                                            </textField>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uop-Sa-px6">
+                                                <rect key="frame" x="0.0" y="105" width="374" height="216"/>
+                                                <connections>
+                                                    <action selector="datePickerChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="OPV-RX-glQ"/>
+                                                </connections>
+                                            </datePicker>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6h-M8-8rH">
+                                                <rect key="frame" x="0.0" y="341" width="374" height="33"/>
+                                                <color key="backgroundColor" red="0.87058823529999996" green="0.52749378059999996" blue="0.77283629659999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="Clear Data">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearDataButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="PuO-3G-d24"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QOR-3p-1v3" secondAttribute="trailing" constant="20" id="5sB-Jt-nnP"/>
+                                    <constraint firstItem="QOR-3p-1v3" firstAttribute="leading" secondItem="lAi-oh-IUr" secondAttribute="leading" constant="20" id="TPj-xw-KQZ"/>
+                                    <constraint firstItem="QOR-3p-1v3" firstAttribute="centerX" secondItem="lAi-oh-IUr" secondAttribute="centerX" id="Thz-ZM-UBB"/>
+                                    <constraint firstItem="QOR-3p-1v3" firstAttribute="top" secondItem="lAi-oh-IUr" secondAttribute="top" constant="20" id="cbi-ds-Ijk"/>
+                                    <constraint firstAttribute="bottom" secondItem="QOR-3p-1v3" secondAttribute="bottom" constant="20" id="tZy-Jr-UzG"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lAi-oh-IUr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2BT-mj-qtX"/>
+                            <constraint firstItem="lAi-oh-IUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GbS-xY-P6k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lAi-oh-IUr" secondAttribute="trailing" id="bba-bF-coi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lAi-oh-IUr" secondAttribute="bottom" id="g8c-FK-8vw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Ekf-Un-ut2"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentBottomConstraint" destination="g8c-FK-8vw" id="rfp-0o-TV6"/>
+                        <outlet property="datePicker" destination="uop-Sa-px6" id="N4K-QZ-KmL"/>
+                        <outlet property="switchControl" destination="28y-GV-mo2" id="sMx-c3-OmK"/>
+                        <outlet property="textField" destination="Nky-Qy-d1h" id="raZ-nj-tE1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FBD-eo-MPd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kWI-Gs-R7C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jxf-1r-dpx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="06h-LI-Ppm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7I1-Hm-9Dw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
