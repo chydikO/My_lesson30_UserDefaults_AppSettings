@@ -13,38 +13,51 @@ class AppSettings {
     
     static let shared = AppSettings()
     
+    private var _switchValue: Bool
+    private var _stringValue: String?
+    private var _dateValue: Date?
+    
+    private var _userDefaults = UserDefaults.standard
+    
     private enum Keys {
-        static let BoolKey = "BoolKey"
-        static let StringKey = "StringKey"
-        static let DateKey = "DateKey"
+        static let BoolKey      = "BoolKey"
+        static let StringKey    = "StringKey"
+        static let DateKey      = "DateKey"
     }
     
-    private init() {}
+    private init() {
+        _switchValue = _userDefaults.bool(forKey: Keys.BoolKey)
+        _stringValue = _userDefaults.string(forKey: Keys.StringKey)
+        _dateValue = _userDefaults.object(forKey: Keys.DateKey) as? Date
+    }
     
     var switchValue: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: Keys.BoolKey)
+            return _switchValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Keys.BoolKey)
+            _switchValue = newValue
+            _userDefaults.set(newValue, forKey: Keys.BoolKey)
         }
     }
     
     var stringValue: String? {
         get {
-            return UserDefaults.standard.value(forKey: Keys.StringKey) as? String
+            return _stringValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Keys.StringKey)
+            _stringValue = newValue
+            _userDefaults.set(newValue, forKey: Keys.StringKey)
         }
     }
     
     var dateValue: Date? {
         get {
-            return UserDefaults.standard.value(forKey: Keys.DateKey) as? Date
+            return _dateValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Keys.DateKey)
+            _dateValue = newValue
+            _userDefaults.set(newValue, forKey: Keys.DateKey)
         }
     }
         
@@ -53,5 +66,4 @@ class AppSettings {
         stringValue = nil
         dateValue = nil
     }
-    
 }
